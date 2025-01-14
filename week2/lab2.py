@@ -8,3 +8,11 @@ print("Elements: ", elements)
 #    print(f"{message}, {name}")
 #say_greeting("Ricki")
 #say_greeting("Ricki", "Hello")
+
+def get_valid_int_input(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Error: Please enter a valid integer")
+            continue
