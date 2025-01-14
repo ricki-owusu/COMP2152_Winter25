@@ -31,5 +31,7 @@ try:
         print("You rolled a mid element, fren.")
     else:
         print("You rolled a strong element, fren.")
+except IndexError:
+    print("Error: Invalid element index!")
 except Exception as e:
-    print("")
+    print(f"An unexpected error occurred: {e}")
