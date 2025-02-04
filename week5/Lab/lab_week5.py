@@ -224,19 +224,7 @@ if not input_invalid:
         print("    |", end="    ")
 
         # Lab 5 - Question 1: 
-        hero_name = input("Enter Hero's name (first and last): ")
-        name = hero_name.split()
-        if len(name) != 2:
-            print("     |  Please enter a first and last name.(seperated by spaces)")
-            tries += 1
-        else:
-            if not name[0].isalpha() + name[1].isalpha():
-                print("     |  Please use only letters.")
-                tries += 1
-            else:
-                short_name = name[0][0:2:1] + name[1][0:1:1]
-                print("     |  I'm going to call you " + short_name + "for short")
-                input_invalid = False
+        
 
     if not input_invalid:
         stars_display = "*" * num_stars
