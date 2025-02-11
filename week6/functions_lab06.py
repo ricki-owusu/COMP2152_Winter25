@@ -170,3 +170,5 @@ def adjust_combat_strength(combat_strength, m_combat_strength):
             elif "Monster killed the" in last_game:
                 combat_strength += 1
                 print("   |  Increasing Hero's combat strength since you lost the last game!")
+            else:
+                print("    |    ...Based on your previous game, neither the hero not the monsters combat strength was increased.")
