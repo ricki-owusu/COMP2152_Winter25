@@ -1,6 +1,7 @@
 import platform
 import socket
 import os
+import sys
 
 print("Current Machine Type:")
 print(platform.machine())
@@ -54,5 +55,32 @@ file_object_TextIO.flush() # Ensure content is written immediately
 
 print(f"[Before Fork] Process ID: {os.getpid()}")
 
+#####
+pid = os
 
+if pid == 0:
+    # Child process
+    print(f"[Child Process] PID: {os.getpid()}, Parent PID: {os.getppid}]")
 
+    #Move the cursor to the beginning of the file before reading
+    os.lseek(file_handle, 0, 0)
+
+    #Read and print the file contents
+    print(f"[Child Process] {os.getpid()} File Contents: {os.read(file_handle, 100).decode()}]")
+
+    #Close only in the child process
+    os.close(file_handle)
+    sys.exit(0)
+
+else:
+    # parent process
+    print(f"[Parent Process] PID: {os.getpid()}, Child PID: {pid}]")
+
+    print("Wait for the child process")
+    os.wait()
+    print("The child process is finished its operations")
+
+    file_object_TextIO.close()
+
+print(f"\n[Process {os.getpid()}] File closed. Exiting now.")
+sys.exit(0)
