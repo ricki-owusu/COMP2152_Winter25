@@ -31,3 +31,8 @@ print("Operating System Name:")
 print(platform.system())
 
 print("--------------------\n")
+
+print("Current Process ID:")
+print(os.getpid())
+
+print("--------------------\n")
