@@ -18,7 +18,7 @@ print("Age is: " + str(person1.age))
 print("Height is: " + str(person1.height))
 
 # Accessing heart through composition
-print("Heart rate: " + str(person1.heart.beats_per_minute))
+print("Heart rate: " + str(person1.heart.bpm))
 person1.heart.beat()
 person1.age = 25
 print(str(person1.name) + "'s new age is: " + str(person1.age))
@@ -29,7 +29,7 @@ print("Do humans give live birth: " + str(person1.live_birth))
 
 print("\n--- Creating a Tick object for aggregation --- ")
 tick1 = Tick()
-tick1.suck_blood()
+tick1.consume_blood()
 
 print("\n--- Creating a Puma object (aggregation with Tick) --- ")
 puma1 = Puma(2, tick1)
@@ -40,9 +40,9 @@ print("Puma has sharp claws: " + str(puma1.sharp_claws))
 puma1.love()
 
 # Aggregated object interaction
-puma1.tick.suck_blood()
+puma1.tick.consume_blood()
 
 # Optional: show that tail_length is not defined if not implemented
 # print(puma1.tail_length)  # Uncomment only if tail_length exists
 
-print("--- Destructions due to end of the scope ---")
+print("--- Destruction's due to end of the scope ---")
